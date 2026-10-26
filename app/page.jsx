@@ -35,6 +35,11 @@ const Home = () => {
   }
 
   async function deletePost(id) {
+
+    let answer = prompt("Parolni kiriting:")
+
+    if(answer != "7788") return alert("Parol noto'g'ri va postlariga teginma!")
+
     await fetch("./api/posts", {
       method: "DELETE",
       headers: {

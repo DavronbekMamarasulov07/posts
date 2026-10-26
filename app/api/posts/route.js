@@ -45,6 +45,5 @@ export async function POST(req) {
 export async function DELETE(req) {
   const { id } = await req.json();
   posts = posts.filter((p) => p.id !== id);
-    return Response.json({ message: "Post o'chirildi" }, { status: 200 });
-    
+return Response.json({ message: "Post o'chirildi" }, { status: 200 });
 }
