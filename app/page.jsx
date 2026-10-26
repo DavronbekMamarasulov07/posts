@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -74,9 +75,19 @@ const Home = () => {
 
   return (
     <main className="w-full min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto transition-colors duration-200">
-      <h1 className="text-3xl font-bold tracking-tight text-center mb-8 flex items-center justify-center gap-2">
-        📰 Maqolalar
-      </h1>
+      {/* Yuqori panel: Sarlavha va /location sahifasiga tugma */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
+          📰 Maqolalar
+        </h1>
+
+        <Link
+          href="/location"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium transition cursor-pointer shadow-sm"
+        >
+          📍 IP Lokatsiya tekshirish
+        </Link>
+      </div>
 
       {/* Post yaratish formasi */}
       <form
@@ -131,7 +142,6 @@ const Home = () => {
                 </p>
               </div>
 
-              {/* IP, Qurilma va O'chirish qismi */}
               <div className="pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between gap-2 text-xs">
                 <div className="flex flex-col gap-1 text-neutral-500 dark:text-neutral-400">
                   <span className="flex items-center gap-1 font-mono">
